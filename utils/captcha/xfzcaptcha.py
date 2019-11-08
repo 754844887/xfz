@@ -51,7 +51,8 @@ class ValidCodeImg:
 		draw = ImageDraw.Draw(image)
 
 		# 获取一个font字体对象参数是ttf的字体文件的目录，以及字体的大小
-		font = ImageFont.truetype("verdana.ttf", encoding='utf-8',size=self.font_size)
+		font_path = os.path.dirname(os.path.abspath(__file__))
+		font = ImageFont.truetype(font_path + "/verdana.ttf", encoding='utf-8',size=self.font_size)
 
 		temp = []
 		for i in range(self.code_count):
