@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1414195_ycfnhgcx9fc.css">
+    <link rel="stylesheet" href="{% static "css/search/search_index.min.css" %}">
+    <script type="text/javascript" src="{% static "js/jquery-3.4.1.min.js" %}"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-box">
+                <a href="/"></a>
+            </div>
+            <ul class="nav">
+                <li class="active"><a href="#">创投咨讯</a></li>
+                <li><a href="#">创业课堂</a></li>
+                <li><a href="#">付费资讯</a></li>
+                <li><a href="#">搜索</a></li>
+            </ul>
+            <div class="auth-box">
+                <i class="iconfont icon-person"></i>
+                <a href="#">登录</a> /
+                <a href="#">注册</a>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="wrapper">
+            <div class="search-wrapper">
+                <div class="search-area">
+                    <input type="text" name="search" id="search" placeholder="输入新闻关键字或作者名字">
+                    <div class="button">搜索</div>
+                </div>
+                <div class="recommend-list">
+                    <h2>热门推荐</h2>
+                    <ul class="news-list">
+                        <li>
+                            <a class="li-container" href="#" target="_blank">
+                                <div class="li-img">
+                                    <img src="https://static-image.xfz.cn/1568893637_617.png">
+                                </div>
+                                <div class="li-content">
+                                    <div class="li-title">麦思加教育完成千万级天使轮融资 投资方为蓝港互动</div>
+                                    <div class="li-detail">动画式微课、游戏型课件、成长性体系，这三大特点同时也构成了区别于其他在线教育平台的核心竞争力</div>
+                                    <div class="li-other">
+                                        <span class="li-type"><label>蓝港互动</label><label>少儿数学</label></span>
+                                        <span class="li-time">
+                                            09月19日
+                                        </span>
+                                        <span class="li-author">
+                                            <i class="li-author-name"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                    <a class="li-container" href="#" target="_blank">
+                        <div class="li-img">
+                            <img src="https://static-image.xfz.cn/1569032847_141.jpeg">
+                        </div>
+                        <div class="li-content">
+                            <div class="li-title">早报：荣耀总裁赵明称当前5G手机不一定全国通用；美国电子烟相关病例攀升；办公室小野否认团队解散</div>
+                            <div class="li-detail">《财富》发布中国40位40岁以下商界精英：张一鸣居首</div>
+                            <div class="li-other">
+                                <span class="li-type"><label>荣耀总裁</label><label>电子烟</label><label>办公室小野</label></span>
+                                <span class="li-time">
+                                    09月21日
+                                </span>
+                                <span class="li-author">
+                                    <i class="li-author-name"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-wrapper">
+                <div class="title-group">
+                    <span class="title">在线课堂</span>
+                    <a href="#" class="more">更多</a>
+                </div>
+                <div class="advertis"><a href=""><img src="https://static-image.xfz.cn/1554346383_8.png" alt=""></a></div>
+                <div class="title-group"><span class="title">关注小饭桌</span></div>
+                <div class="focus-group">
+                    <div class="left-focus">
+                        <ul>
+                            <li class="zhihu"><a href="#" target="_blank">小饭桌创业课堂</a></li>
+                            <li class="weibo"><a href="#" target="_blank">小饭桌创业课堂</a></li>
+                            <li class="toutiao"><a href="#" target="_blank">小饭桌</a></li>
+                        </ul>
+                    </div>
+                    <div class="right-focus">
+                        <p class="desc">扫码关注小饭桌微信公众平台</p>
+                    </div>
+                </div>
+                <div class="title-group">
+                    <span class="title">热门推荐</span>
+                </div>
+                <div class="hot-news-group">
+                    <ul class="hot-list">
+                        <li>
+                            <div class="left-group">
+                                <p class="desc"><a href="#">他苦熬印度短视频三年，在下沉市场避开抖音竞争，靠趣头条模式获客融资千万</a></p>
+                                <div class="more">
+                                    <span class="category"><a href="#">热点</a></span>
+                                    <span class="pub-time">09月20日</span>
+                                </div>
+                            </div>
+                            <div class="right-group">
+                                <img src="https://static-image.xfz.cn/1568719627_836.png-website.news.list" alt="">
+                            </div>
+                        </li>
+
+                         <li>
+                            <div class="left-group">
+                                <p class="desc"><a href="#">他苦熬印度短视频三年，在下沉市场避开抖音竞争，靠趣头条模式获客融资千万</a></p>
+                                <div class="more">
+                                    <span class="category"><a href="#">热点</a></span>
+                                    <span class="pub-time">09月20日</span>
+                                </div>
+                            </div>
+                            <div class="right-group">
+                                <img src="https://static-image.xfz.cn/1568719627_836.png-website.news.list" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="top-group">
+            <div class="top-main">
+                <div class="logo-box"></div>
+                <div class="detail-group">
+                    <div class="line1">
+                        <ul class="links">
+                                <li><a href="#">关于小饭桌</a></li>
+                                <li><a href="#">小饭桌创业课堂</a></li>
+                                <li><a href="#">凡创资本</a></li>
+                                <li><a href="#">凡卓资本</a></li>
+                            </ul>
+                        <div class="about-us">
+                            <span class="title">关注我们：</span>
+                            <ul class="social">
+                                <li class="weixin">
+                                    <div class="wx-qrcode"></div>
+                                    <span class="text-weixin">小饭桌</span>
+                                </li>
+                                <li class="gzh"><span class="text-gzh">小饭桌创业课堂</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="line2">
+                        <p class="address">地址：北京市朝阳区东三环北路38号院泰康金融大厦</p>
+                        <p class="phonenum">融资服务： bp@xfz.cn 商务合作： bd@xfz.cn</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="down-footer-group">
+            <div class="record-group">
+                <p>©2019 北京子木投资顾问有限公司 京ICP备15051289号|增值电信业务经营许可证：京B2-20170574</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

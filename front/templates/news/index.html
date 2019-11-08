@@ -1,0 +1,88 @@
+{% extends 'base/front_base.html' %}
+{% load my_filter %}
+
+{% block title %}首页{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static "css/news/index.min.css" %}">
+    <script type="text/javascript" src="{% static "js/index.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "art-template/template-web.js" %}"></script>
+    <script id="news-item" type="text/html">
+        {% verbatim %}
+        {{each newses news index}}
+        <li>
+            <div class="thumbnail">
+                <a href="news/{{ news.id }}"><img src={{ news.thumbnail }} alt=""></a>
+            </div>
+            <div class="news-content">
+                <p class="title"><a href="news/{{ news.id }}">{{ news.title }}</a></p>
+                <p class="desc">{{ news.desc }}</p>
+                <p class="more">
+                    <span class="category">{{ news.category.name }}</span>
+                    <span class="time">{{ news.pub_time|timeSince}}</span>
+                    <span class="author">{{ news.author.username }}</span>
+                </p>
+            </div>
+        </li>
+        {{/each}}
+        {% endverbatim %}
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="wrapper">
+            <div class="news-wrapper">
+                <!--轮播图开始-->
+                <div class="banner-group" id="banner-group">
+                    <ul class="banner-ul" id="banner-ul">
+                        {% for banner in banners %}
+                            <li><a href={{ banner.link_to }}><img src={{ banner.image_url }}></a></li>
+                        {% endfor %}
+                    </ul>
+                    <span class="arrow left-arrow">‹</span>
+                    <span class="arrow right-arrow" >›</span>
+                    <div class="page-control-group">
+                        <ul class="page-control">
+                            <!--js自动写入小点点的li标签-->
+                        </ul>
+                    </div>
+                </div>
+                <!--轮播图结束-->
+                <!--新闻导航条开始-->
+                <div class="list-outer-group">
+                        <ul class="list-tab">
+                            <li class="active" data-category="0"><a href="javascript:void(0)">最新资讯</a></li>
+                            {% for category in categories %}
+                                <li data-category={{ category.id }}><a href="javascript:void(0)">{{ category.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        <!--新闻列表开始-->
+                        <ul class="list-inner-group" id="list-more">
+                            {% for news in newses %}
+                                <li>
+                                <div class="thumbnail">
+                                    <a href="{% url "news:news_detail" news.pk %}"><img src={{ news.thumbnail }} alt=""></a>
+                                </div>
+                                <div class="news-content">
+                                    <p class="title"><a href="{% url "news:news_detail" news.pk %}">{{ news.title }}</a></p>
+                                    <p class="desc">{{ news.desc }}</p>
+                                    <p class="more">
+                                        <span class="category">{{ news.category.name }}</span>
+                                        <span class="time">{{ news.pub_time|time_since }}</span>
+                                        <span class="author">{{ news.author.username }}</span>
+                                    </p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                </div>
+                <!--新闻导航条结束-->
+                <!--加载更多按钮开始-->
+                <div class="more-news" id="load-more-btn">加载更多</div>
+                <!--加载更多按钮结束-->
+            </div>
+            {% include 'base/sidebar.html' %}
+        </div>
+    </div>
+{% endblock %}

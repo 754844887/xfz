@@ -1,0 +1,102 @@
+{% extends 'base/front_base.html' %}
+{% block title %}课程详情{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static "css/course/course_detail.min.css" %}">
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="nav">
+            <div class="nav-box">
+                <h3 class="title">在线课堂</h3>
+                <div class="nav-list">
+                    <ul>
+                        <li class="active"><a href="#">最新课堂</a></li>
+                        <li><a href="#">投资人说</a></li>
+                        <li><a href="#">明星案例</a></li>
+                        <li><a href="#">创业知识</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="top-group">
+                <div class="top">
+                    <div class="title">创业CEO如何避免技术决策错误</div>
+                    <div class="share">
+                        <span class="share-to">分享至:</span>
+                        <span class="weixin"></span>
+                        <span class="weibo"></span>
+                    </div>
+                </div>
+                <img src="https://static-image.xfz.cn/1563171621_723.png" alt="">
+            </div>
+            <div class="info-left">
+                <div class="teach-info">
+                    <div class="teach-title">课程讲师</div>
+                    <div class="guide-persion">
+                        <div class="photo">
+                            <img src="https://static-image.xfz.cn/1536563248_165.png" alt="">
+                        </div>
+                        <div class="persion-info">
+                            <span class="name">龚世海</span>
+                            <span class="position">HiCTO创始人兼CEO</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="help-info">
+                    <div class="title">帮助中心</div>
+                    <div class="content">
+                        <p>
+                            1. 购买后的课程在线可反复观看学习，视频有效期以具体课程信息为准。 <br>
+                            2. 课程暂不支持下载观看，均为在线观看视频。 <br>
+                            3. 课程一经购买，不可转让、不可退款；仅限购买账号观看。 <br>
+                            4. 如有问题请咨询客服饭桌君： 电话：18618172287   微信：fanzhuojun888 <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="info-right">
+                <div class="title">推荐课堂</div>
+                <div class="image">
+                    <ul>
+                        <li><a href="#"><img src="https://static-image.xfz.cn/1554346383_8.png-course.list.small" alt=""></a></li>
+                        <li><a href="#"><img src="https://static-image.xfz.cn/1513753715_100.jpg-course.list.small" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li>
+                            <div class="left">
+                                <div class="title">共享单车与城市</div>
+                                <div class="author">张已丁</div>
+                            </div>
+                            <div class="right">
+                                <img src="https://static-image.xfz.cn/1513065071_142.png-course.list.small" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <div class="title">共享单车与城市</div>
+                                <div class="author">张已丁</div>
+                            </div>
+                            <div class="right">
+                                <img src="https://static-image.xfz.cn/1513065071_142.png-course.list.small" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <div class="title">共享单车与城市</div>
+                                <div class="author">张已丁</div>
+                            </div>
+                            <div class="right">
+                                <img src="https://static-image.xfz.cn/1513065071_142.png-course.list.small" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,144 @@
+@import "../common/header.scss";
+@import "../common/body.scss";
+@import "../common/footer.scss";
+@import "../common/sidebar.scss";
+
+.main{
+    .wrapper{
+      .news-wrapper{
+        background: white;
+        padding: 20px;
+        box-sizing: border-box;
+        .news-info{
+          .title{
+            font-size: 24px;
+            color: #212121;
+          }
+          .info{
+            height: 30px;
+            margin: 15px 0;
+            color: $fontcolor;
+            font-size: 14px;
+            line-height: 30px;
+            overflow: hidden;
+            position: relative;
+            .auth-info{
+              float: left;
+              span{
+                margin-left: 5px;
+                &:first-of-type{
+                  margin-left: 0;
+                }
+              }
+              .category{
+                background: #f6766a;
+                border-radius: 2px;
+                color: white;
+                padding: 0 2px;
+              }
+            }
+            .share{
+              float: left;
+              margin-left: 450px;
+              overflow: hidden;
+              .share-text{
+                float: left;
+              }
+              .weixin{
+                cursor: pointer;
+                float: left;
+                margin-left: 10px;
+                width: 30px;
+                height: 30px;
+                background-image: url("https://www.xfz.cn/static/build/images/share.png");
+                background-repeat: no-repeat;
+                background-size: 240%;
+              }
+              .weibo{
+                float: left;
+                margin-left: 10px;
+                width: 30px;
+                height: 30px;
+                background-image: url("https://www.xfz.cn/static/build/images/share.png");
+                background-repeat: no-repeat;
+                background-size: 240%;
+                background-position: -42px 0;
+              }
+          }
+          }
+          .article{
+            img{
+              max-width: 100%;
+            }
+          }
+        }
+        .comment-wrapper{
+          margin-top: 20px;
+          padding: 20px 0;
+          border-top: 1px solid #c9c9c9;
+          h3{
+            font-size: 18px;
+            font-weight: 400;
+          }
+          .comment-textarea{
+            width: 100%;
+            margin: 10px 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            resize: none;
+            font-size: 14px;
+          }
+          .nologin-textarea{
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+          }
+          .login-textarea{
+            height: 80px;
+          }
+          .submit-group{
+            text-align: right;
+            .submit-buttom{
+              color: white;
+              background: #5b80b2;
+              padding: 5px 8px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+          }
+          .comment-list{
+            margin-top: 40px;
+              li{
+                color: #878787;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #c9c9c9;
+                margin-bottom: 20px;
+                .user-info{
+                  height: 40px;
+                  line-height: 40px;
+                  overflow: hidden;
+                  img{
+                    float: left;
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                  }
+                  .author{
+                    float: left;
+                    margin-left: 20px;
+                  }
+                  .pub-time{
+                    float: right;
+                  }
+                }
+              }
+              .comment{
+                color: #212121;
+                margin-left: 60px;
+              }
+            }
+          }
+        }
+      }
+    }

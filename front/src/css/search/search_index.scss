@@ -1,0 +1,124 @@
+@import "../common/reset.scss";
+@import "../common/constants.scss";
+@import "../common/header.scss";
+@import "../common/footer.scss";
+@import "../common/sidebar.scss";
+
+body{
+    background: #f2f2f2f2;
+}
+
+.main{
+    width: 100%;
+    margin-top: 84px;
+    .wrapper {
+      width: $pagewidth;
+      margin: 0 auto;
+      overflow: hidden;
+      .search-wrapper{
+        width: $news-wrapperwidth;
+        float: left;
+        overflow: hidden;
+        background: white;
+        .search-area{
+          overflow: auto;
+          width: 100%;
+          padding: 50px 30px;
+          box-shadow: 0 1px 2px rgba(0,0,0,.1);
+          input{
+            width: 615px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            border-right: none;
+            float: left;
+            line-height: 22px;
+            padding: 10px;
+            font-size: 22px;
+            outline: 0;
+            box-sizing: border-box;
+            height: 46px;
+            }
+          .button{
+            width: 120px;
+            height: 46px;
+            float: left;
+            line-height: 46px;
+            text-align: center;
+            background: #e63929;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 2px;
+          }
+        }
+        .recommend-list{
+          padding: 20px;
+          h2{
+            font-weight: 400;
+            font-size: 18px;
+            color: #212121;
+            line-height: 18px;
+          }
+          .news-list{
+            margin-top: 20px;
+            overflow: hidden;
+            li{
+              padding: 20px 0;
+              overflow: hidden;
+              border-bottom: 1px solid #c9c9c9;
+              .li-container{
+                text-decoration: none;
+                color: inherit;
+                .li-img{
+                  float: left;
+                  width: 182px;
+                  height: 130px;
+                  img{
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+                .li-content{
+                  float: left;
+                  width: 542px;
+                  height: 136px;
+                  margin-left: 30px;
+                  position: relative;
+                  .li-title{
+                    color: #212121;
+                    font-size: 20px;
+                    line-height: 26px;
+                    max-height: 52px;
+                    overflow: hidden;
+                    transition: .4s all;
+                    font-weight: 500;
+                    text-align: justify;
+                  }
+                  .li-detail{
+                    color: #878787;
+                    font-size: 14px;
+                    height: 44px;
+                    line-height: 22px;
+                    margin-top: 10px;
+                    overflow: hidden;
+                    text-align: justify;
+                  }
+                  .li-other{
+                    height: 20px;
+                    width: 542px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    cursor: pointer;
+                    overflow: hidden;
+                    color: #999;
+                    margin-top: 8px;
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      }
+    }

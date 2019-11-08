@@ -1,0 +1,92 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}轮播图管理{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static "css/banner/banner.min.css" %}">
+    <script type="text/javascript" src="{% static "art-template/template-web.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/banner.min.js" %}"></script>
+    <script id="banner-item" type="text/html">
+    {% verbatim %}
+        <div class="row banner-row">
+        <div class="col-md-6">
+          <div class="box box-solid">
+              <div class="box-header">
+                  {{ if banner }}
+                    <h3 class="box-title banner-id">位置: {{ banner.priority }}</h3>
+                  {{ else }}
+                    <h3 class="box-title">位置: 0</h3>
+                  {{ /if }}
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn bg-teal btn-sm small-btn min-btn" data-widget="collapse"><i id="banner-icon" class="fa fa-minus"></i>
+                    </button>
+                      {{ if banner }}
+                        <button type="button" data-bannerId={{ banner.id }} class="btn bg-teal btn-sm close-btn" data-widget="remove"><i class="fa fa-times"></i>
+                         </button>
+                      {{ else }}
+                        <button type="button" class="btn bg-teal btn-sm close-btn" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
+                      {{ /if }}
+              </div>
+              </div>
+              <div class="box-body">
+                  <div class="banner-group">
+                      <div class="thumbnail-group">
+                          <input type="file" id="input-upload" style="display: none">
+                          {{ if banner }}
+                            <img src={{ banner.image_url }} class="img-responsive image-input">
+                          {{ else }}
+                            <img src="/static/images/banner.png" class="img-responsive image-input">
+                          {{ /if }}
+                      </div>
+                      <div class="thumbnail-input">
+                          <div class="form-group priority">
+                            <label class="control-label" for="priority">位置:</label>
+                            {{ if banner }}
+                                <input type="text" class="form-control" placeholder="请输入位置" id="priority" name="priority" value={{banner.priority}}>
+                            {{ else }}
+                                <input type="text" class="form-control" placeholder="请输入位置" id="priority" name="priority">
+                            {{ /if }}
+                          </div>
+                          <div class="form-group link">
+                            <label class="control-label" for="link">跳转链接:</label>
+                            {{ if banner }}
+                                <input type="text" class="form-control" placeholder="请输入跳转链接" id="link" name="link" value={{banner.link_to}}>
+                            {{ else }}
+                                <input type="text" class="form-control" placeholder="请输入跳转链接" id="link" name="link">
+                            {{ /if }}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="box-footer">
+                {{ if banner }}
+                    <button type="submit" id="submin-btn" class="btn btn-primary pull-right" data-bannerId={{ banner.id }}>保存</button>
+                {{ else }}
+                     <button type="submit" id="submin-btn" class="btn btn-primary pull-right">保存</button>
+                {{ /if }}
+              </div>
+          </div>
+        </div>
+      </div>
+      {% endverbatim %}
+    </script>
+{% endblock %}
+
+{% block content-header %}
+    <h1>轮播图管理</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="addBanner">
+        <button type="submit" id="addBanner-btn" class="btn btn-primary addBanner-btn">
+            <i class="fa fa-plus"></i>
+            添加轮播图
+        </button>
+        <ul class="tips">
+            <li>• 支持JPG,GIF,PNG格式,最多上传6张</li>
+            <li>• 比例4:1,宽度在800px以上，5M以内</li>
+        </ul>
+    </div>
+    <div class="banner-list"></div>
+{% endblock %}

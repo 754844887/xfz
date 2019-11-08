@@ -1,0 +1,58 @@
+{% extends "base/front_base.html" %}
+{% load my_filter %}
+
+{% block title %}新闻详情{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static "css/news/new_detail.min.css" %}">
+     <script type="text/javascript" src="{% static "js/comment.min.js" %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="wrapper">
+            <div class="news-wrapper">
+                <div class="news-info">
+                    <h1 class="title">{{ news.title }}</h1>
+                    <div class="info">
+                        <div class="auth-info">
+                            <span class="auth">{{ news.author.username }}</span>
+                            <span class="pub-time">{{ news.pub_time|time_since }}</span>
+                            <span class="category">{{ news.category.name }}</span>
+                        </div>
+                        <div class="share">
+                            <span class="share-text">分享至:</span>
+                            <a class="weixin"></a>
+                            <a href="#" class="weibo" target="_blank"></a>
+                        </div>
+                    </div>
+                    <article class="article">
+                        <div class="content-detail">
+                            {{ news.content|safe }}
+                        </div>
+                    </article>
+                </div>
+                <div class="comment-wrapper">
+                    <h3>文章评论（{{ total.total }}）</h3>
+                    <textarea data-news-id="{{ news.id }}" id="comment" name="comment" class="comment-textarea nologin-textarea" placeholder="登录可评论"></textarea>
+                    <div class="submit-group">
+                        <buttom class="submit-buttom">立即评论</buttom>
+                    </div>
+                        <ul class="comment-list">
+                            {% for content in news.comments.all %}
+                                <li>
+                                <div class="user-info">
+                                    <img src="https://static-image.xfz.cn/1533547276_895.png" alt="">
+                                    <span class="author">{{ content.author.username }}</span>
+                                    <span class="pub-time">{{ content.pub_time|time_since }}</span>
+                                </div>
+                                <p class="comment">{{ content.content }}</p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% include 'base/sidebar.html' %}
+        </div>
+    </div>
+{% endblock %}

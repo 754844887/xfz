@@ -1,0 +1,39 @@
+@import "../common/reset.scss";
+
+.addBanner{
+  width: 100%;
+  height: 50px;
+  .addBanner-btn{
+    float: left;
+  }
+  .tips{
+    float: left;
+    margin-left: 20px;
+  }
+}
+
+
+.banner-group{
+  height: 200px;
+  .thumbnail-group{
+    height: 100%;
+    width: 300px;
+    float: left;
+    img{
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .thumbnail-input{
+    height: 100%;
+    width: 300px;
+    float: left;
+    margin-left: 60px;
+    .priority{
+      margin-top: 10px;
+    }
+    .link{
+      margin-top: 35px;
+    }
+  }
+}

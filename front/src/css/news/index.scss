@@ -1,0 +1,202 @@
+@import "../common/reset.scss";
+@import "../common/constants.scss";
+@import "../common/header.scss";
+@import "../common/footer.scss";
+@import "../common/sidebar.scss";
+
+body{
+    background: #f2f2f2f2;
+}
+
+.main{
+    width: 100%;
+    margin-top: 84px;
+    .wrapper{
+        width: $pagewidth;
+        margin: 0 auto;
+        overflow: hidden;
+        .news-wrapper{
+            width: $news-wrapperwidth;
+            float: left;
+            overflow: hidden;
+            .banner-group{
+                $bannerheight: 202px;
+                width: 100%;
+                height: $bannerheight;
+                position: relative;
+                .banner-ul{
+                    overflow: hidden;
+                    //width: $news-wrapperwidth*3;
+                    // 设置3张图片的宽度(js根据轮播图片个数自动设置）
+                    position: absolute;
+                    left: 0;
+                    li{
+                        float: left;
+                        width: $news-wrapperwidth;
+                        height: $bannerheight;
+                        img{
+                            width: $news-wrapperwidth;
+                            height: $bannerheight;
+                        }
+                    }
+                }
+                .arrow{
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                    font-size: 70px;
+                    cursor: pointer;
+                    color: white;
+                    display: none;
+                }
+                .left-arrow{
+                    float: left;
+                    left: 20px;
+                }
+                .right-arrow{
+                    right: 20px;
+                    float: right;
+                }
+                .page-control-group{
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 20px;
+                    .page-control{
+                        margin: 0 auto;
+                        overflow: hidden;
+                        li{
+                            width: 10px;
+                            height: 10px;
+                            border: 1px solid white;
+                            border-radius: 50%;
+                            float: left;
+                            cursor: pointer;
+                            margin: 0 8px;
+                            box-sizing: border-box;
+                            &.active{
+                                background: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.main{
+    .wrapper{
+        .news-wrapper{
+            .list-outer-group{
+                margin-top: 14px;
+                background: white;
+                .list-tab{
+                    width: 100%;
+                    height: 66px;
+                    overflow: hidden;
+                    border: 1px solid #eeeeee;
+                    border-left: none;
+                    border-right: none;
+                    li{
+                        margin-top: 22px;
+                        float: left;
+                        padding: 0 10px;
+
+                        a{
+                            text-decoration: none;
+                            font-size: large;
+                            color: #878787;
+                        }
+                        //匹配li标签的第一个元素
+                        &:first-of-type{
+                            border-left: 5px solid red;
+                        }
+                        &.active{
+                            a{
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+            .list-inner-group{
+                li{
+                    overflow: hidden;
+                    border-bottom: 1px solid #eeeeee;
+                    padding: 20px;
+                .thumbnail{
+                    float: left;
+                    height: 162px;
+                    width: 225px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .news-content{
+                    float: right;
+                    height: 162px;
+                    width: 504px;
+                    position: relative;
+                    .title{
+                        a:hover{
+                            color: red;
+                        }
+                        a{
+                            color: #212121;
+                            text-decoration: none;
+                            font-size: 20px;
+                        }
+                    }
+                    .desc{
+                        color: #878787;
+                        font-size: 14px;
+                        margin-top: 10px;
+                    }
+                    .more {
+                        font-size: 14px;
+                        color: #878787;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        cursor: pointer;
+
+                        .category {
+                            float: left;
+                        }
+
+                        .author {
+                            float: right;
+                        }
+
+                        .time {
+                            margin-left: 15px;
+                            float: right;
+                        }
+                    }
+                    }
+
+                }
+            }
+            .more-news{
+                width: 400px;
+                height: 40px;
+                background: #f7766a;
+                color: white;
+                margin: 0 auto 20px;
+                line-height: 40px;
+                text-align: center;
+                border-radius: 4px;
+                margin-top: 15px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+        }
+    }
+}
+
+
