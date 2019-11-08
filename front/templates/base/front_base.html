@@ -35,7 +35,7 @@
                         <i class="iconfont icon-person"></i>
                         <span class="login-user">{{ request.user.username }}</span>
                         <div class="dis">
-                            {% if request.user.is_staff %}
+                            {% if request.user.is_staff or request.user.is_superuser%}
                                 <a href="{% url 'cms:index' %}">管理后台</a>
                             {% endif %}
                             <a href="{% url 'xfzauth:logout_view' %}">退出登录</a>
